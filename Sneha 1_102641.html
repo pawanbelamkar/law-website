@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Advocate Sneha Pasnur Nara provides professional legal services with a client-focused approach." />
+  <title>Advocate Sneha Pasnur Nara | Legal Services</title>
+  <style>
+    :root {
+      --primary: #1f3c88;
+      --primary-dark: #142a63;
+      --accent: #c9a227;
+      --bg: #f6f8fc;
+      --card: rgba(255,255,255,0.90);
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: rgba(31, 60, 136, 0.12);
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(31,60,136,0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(201,162,39,0.12), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      line-height: 1.7;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.78);
+      border-bottom: 1px solid rgba(15,23,42,0.06);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      color: var(--primary-dark);
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a {
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(31,60,136,0.08);
+      color: var(--primary-dark);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px 16px 10px;
+    }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 24px;
+      align-items: center;
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(31,60,136,0.97), rgba(20,42,99,0.96));
+      color: #fff;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      inset: auto -100px -100px auto;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(201,162,39,0.35), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.08);
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0; }
+    h1 { font-size: clamp(2rem, 5vw, 4rem); margin-top: 14px; }
+    .hero p {
+      max-width: 760px;
+      font-size: 1.02rem;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform .15s ease, box-shadow .15s ease;
+      text-align: center;
+      width: fit-content;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--accent);
+      color: #1a1a1a;
+      box-shadow: 0 10px 25px rgba(201,162,39,0.28);
+    }
+
+    .profile-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 24px;
+      padding: 18px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      margin: 0 auto 16px;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .quick-stats {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 12px;
+      border-radius: 16px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1rem;
+    }
+    .stat span {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.84rem;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 16px 42px;
+    }
+
+    .section {
+      margin-top: 22px;
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: end;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .section-header p { margin: 8px 0 0; color: var(--muted); }
+    .section-title {
+      font-size: 1.55rem;
+      color: var(--primary-dark);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(31,60,136,0.10);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .card h3 { color: var(--primary-dark); margin-bottom: 8px; }
+    .muted { color: var(--muted); }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-item { margin: 10px 0; }
+    .label {
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: block;
+      margin-bottom: 3px;
+    }
+    .value { font-weight: 700; word-break: break-word; }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form .full { grid-column: 1 / -1; }
+    input, textarea, select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(31,60,136,0.15);
+      background: #fff;
+      font: inherit;
+      outline: none;
+    }
+    textarea { min-height: 140px; resize: vertical; }
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(31,60,136,0.55);
+      box-shadow: 0 0 0 4px rgba(31,60,136,0.08);
+    }
+
+    .map {
+      width: 100%;
+      min-height: 320px;
+      border: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 22px rgba(15,23,42,0.08);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 22px 16px 34px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-card,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .form {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        padding: 12px 14px;
+      }
+
+      .hero {
+        padding: 14px 12px 8px;
+      }
+
+      .hero-card {
+        padding: 20px 16px;
+        border-radius: 22px;
+      }
+
+      .section {
+        padding: 18px 14px;
+        border-radius: 18px;
+      }
+
+      .section-title {
+        font-size: 1.35rem;
+      }
+
+      .card {
+        padding: 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .profile-photo {
+        max-width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="nav">
+      <div class="brand">Advocate Sneha Pasnur Nara</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#practice">Practice Areas</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="hero">
+    <section class="hero-card">
+      <div>
+        <span class="eyebrow">Trusted Legal Guidance</span>
+        <h1>Advocate Sneha Pasnur Nara</h1>
+        <p>
+          Professional legal support for individuals and businesses with a client-focused, practical, and ethical approach.
+          Assistance available for consultation, documentation, and legal representation.
+        </p>
+      </div>
+
+      <div class="profile-card">
+        <img class="profile-photo" src="profile-photo.jpeg" alt="Profile photo of Advocate Sneha Pasnur Nara" />
+        <h3>Advocate Sneha Pasnur Nara</h3>
+        <p style="margin:8px 0 0;color:rgba(255,255,255,0.86);">Legal Professional</p>
+        <div class="quick-stats">
+          <div class="stat"><strong>Client</strong><span>Focused</span></div>
+          <div class="stat"><strong>Ethical</strong><span>Practice</span></div>
+          <div class="stat"><strong>Prompt</strong><span>Support</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="container">
+    <section class="section" id="about">
+      <div class="section-header">
+        <div>
+          <div class="section-title">About</div>
+          <p>Professional profile and overview of legal services.</p>
+        </div>
+      </div>
+      <div class="card">
+        <p>
+          Advocate Sneha Pasnur Nara provides clear and practical legal guidance with a strong focus on communication,
+          confidentiality, and timely support. The practice is designed to help clients understand their options and move
+          forward with confidence.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="practice">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Practice Areas</div>
+          <p>Update these based on your actual specialization.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Civil Matters</h3><p>Property disputes, recovery matters, injunctions, and civil litigation.</p></div>
+        <div class="card"><h3>Criminal Matters</h3><p>Bail, defense, complaints, and criminal proceedings.</p></div>
+        <div class="card"><h3>Family Matters</h3><p>Divorce, custody, maintenance, and related family disputes.</p></div>
+        <div class="card"><h3>Property Matters</h3><p>Title issues, ownership disputes, tenancy, and transfer matters.</p></div>
+        <div class="card"><h3>Legal Drafting</h3><p>Notices, agreements, affidavits, and legal documentation.</p></div>
+        <div class="card"><h3>Consultation</h3><p>Case review, strategy discussion, and legal advice.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Contact Details</div>
+          <p>Direct contact information for clients.</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <div class="contact-item"><span class="label">Your Name</span><span class="value">Sneha Pasnur Nara</span></div>
+          <div class="contact-item"><span class="label">Email</span><span class="value"><a href="mailto:Advocatesenahanara@gmail.com">Advocatesenahanara@gmail.com</a></span></div>
+          <div class="contact-item"><span class="label">Office Address</span><span class="value">Daji Peth, Opposite Markandey Rugnalay Hospital Solapur</span></div>
+          <div class="contact-item"><span class="label">Bar Council Enrollment No.</span><span class="value">Add here if applicable</span></div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:12px;">Location</h3>
+          <iframe
+            class="map"
+            title="Office location map"
+            src="https://www.google.com/maps?q=Daji%20Peth%2C%20Opposite%20Markandey%20Rugnalay%20Hospital%20Solapur&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 Advocate Sneha Pasnur Nara. All rights reserved.
+  </footer>
+</body>
+</html>
